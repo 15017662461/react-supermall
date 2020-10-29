@@ -3,9 +3,6 @@ import {withRouter} from 'react-router-dom'
 import './tabbarItem.css'
 @withRouter
 class TabbarItem extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className="tab-bar-item" onClick={this.handleClick.bind(this,this.props.path)}>

@@ -2,7 +2,7 @@
 import MainTabbar from './components/common/tabbar/MainTabbar'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import mainRouter from './router/index';
-import './App.css'
+import './App.css';
 function App() {
   return (
     <div className="App">
