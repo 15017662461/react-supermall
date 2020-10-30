@@ -6,7 +6,7 @@ import category from "./category.svg";
 import category_active from "./category_active.svg";
 import profile from "./profile.svg";
 import profile_active from "./profile_active.svg";
-
+// eslint-disable-next-line
 export default {
   home,
   home_active,

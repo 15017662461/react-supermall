@@ -8,21 +8,24 @@ class MainTabbar extends Component {
   render() {
     return (
       <div className="main-tab-bar" style={{display:'flex',justifyContent:'center'}}>
-        <TabbarItem isActive={this.isActive("home")} path="/home" title="首页">
-          <img src={tabbarImg.home} alt="" />
-          <img src={tabbarImg.home_active} alt="" />
+        <TabbarItem isActive={this.isActive("home")} path="/home" title="首页" 
+        active={<img src={tabbarImg.home_active} alt="" />}
+        deActive={<img src={tabbarImg.home} alt="" />} >
         </TabbarItem>
-        <TabbarItem isActive={this.isActive("category")} path="/category" title="分类">
-          <img src={tabbarImg.category} alt="" />
-          <img src={tabbarImg.category_active} alt="" />
+
+        <TabbarItem isActive={this.isActive("category")} path="/category" title="分类"
+        active={<img src={tabbarImg.category_active} alt="" />}
+        deActive={<img src={tabbarImg.category} alt="" />}>
         </TabbarItem>
-        <TabbarItem isActive={this.isActive("cart")} path="/cart" title="购物车">
-          <img src={tabbarImg.cart} alt="" />
-          <img src={tabbarImg.cart_active} alt="" />
+
+        <TabbarItem isActive={this.isActive("cart")} path="/cart" title="购物车"
+        active={<img src={tabbarImg.cart_active} alt="" />}
+        deActive={<img src={tabbarImg.cart} alt="" />}>
         </TabbarItem>
-        <TabbarItem isActive={this.isActive("profile")} path="/profile" title="我的">
-          <img src={tabbarImg.profile} alt="" />
-          <img src={tabbarImg.profile_active} alt="" />
+
+        <TabbarItem isActive={this.isActive("profile")} path="/profile" title="我的"
+        active={<img src={tabbarImg.profile_active} alt="" />}
+        deActive={<img src={tabbarImg.profile} alt="" />}>
         </TabbarItem>
       </div>
     );

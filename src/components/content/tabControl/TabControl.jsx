@@ -29,7 +29,7 @@ class TabControl extends Component {
   
   titleClick = (index) => {
     this.setState({ currentIndex:index  });
-    this.props.titleClick(index)
+    this.props.titleClick(index);
   }
 }
 

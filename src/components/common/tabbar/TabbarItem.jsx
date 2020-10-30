@@ -10,7 +10,7 @@ class TabbarItem extends Component {
           // this.props.children.map((Child,index) => {
           //   return <Child key={index}></Child>
           // })
-          this.props.isActive ? this.props.children[1] : this.props.children[0]
+          this.props.isActive ? this.props.active : this.props.deActive
         }
         <span style={{color:this.props.isActive ? 'red' : 'black'}}>{this.props.title}</span>
       </div>

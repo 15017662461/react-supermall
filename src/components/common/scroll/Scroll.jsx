@@ -15,9 +15,7 @@ class Scroll extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div className="content">
-          {this.props.children}
-        </div>
+        <div className="content">{this.props.children}</div>
       </div>
     );
   }
@@ -27,19 +25,22 @@ class Scroll extends Component {
       probeType: this.props.probType,
       click: true,
       pullUpLoad: this.props.pullUpLoad,
+      disableMouse: false,
+      disableTouch: false,
     });
     scroll.on("scroll", (position) => {
-      // console.log(position);
+      // this.props.setScrollY(position)
     });
-    if(this.props.pullUpLoad){
-      scroll.on('pullingUp',() => {
+    if (this.props.pullUpLoad) {
+      scroll.on("pullingUp", () => {
         // console.log(1);
         this.props.loadMore();
-      })
+        scroll.finishPullUp();
+      });
     }
     this.setState({ scroll });
   }
-
 }
 
 export default Scroll;
+

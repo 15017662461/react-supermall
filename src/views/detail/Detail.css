@@ -1,0 +1,16 @@
+#detail {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  height: 100vh;
+}
+
+#detail .wrapper{
+  position: absolute;
+  top: 49px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}

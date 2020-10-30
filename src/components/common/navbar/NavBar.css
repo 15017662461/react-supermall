@@ -7,12 +7,12 @@
   font-size: 18px;
 }
 
-.nav-bar-left {
+.nav-bar .left {
   width: 60px;
 }
-.nav-bar-center {
+.nav-bar .center {
   flex: 1;
 }
-.nav-bar-right {
+.nav-bar .right {
   width: 60px;
 }

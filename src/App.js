@@ -1,23 +1,27 @@
 // import './App.less';
 import MainTabbar from './components/common/tabbar/MainTabbar'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route';
 import mainRouter from './router/index';
 import './App.css';
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Router>
 
-        <Switch>
+        <CacheSwitch>
           {
             mainRouter.map((router) => {
-              return <Route path={router.path} component={router.component}></Route>
+              return router.keepAlive ? 
+              <CacheRoute path={router.path} component={router.component} when="always"></CacheRoute> 
+              : 
+              <Route path={router.path} component={router.component}></Route>
             })
           }
           <Redirect from="/" to="/home" exact></Redirect>
           <Redirect to="/404"></Redirect>
 
-        </Switch>
+        </CacheSwitch>
         <MainTabbar className="main-tab-bar"></MainTabbar>
       </Router>
       
