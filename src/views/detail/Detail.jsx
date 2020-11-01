@@ -8,29 +8,30 @@ import {
   Goods,
   GoodsParam,
 } from "./../../network/detail";
-import {connect} from 'react-redux'
-import {addToCart} from './../../redux/actionCreators'
+import { connect } from "react-redux";
+import { addToCart } from "./../../redux/actionCreators";
 
 import DetailNavBar from "./childComps/DetailNavBar";
 import Scroll from "./../../components/common/scroll/Scroll";
 import DetailSwiper from "./childComps/DetailSwiper";
 import DetailBaseInfo from "./childComps/DetailBaseInfo";
 import DetailShopInfo from "./childComps/DetailShopInfo";
+import Toast from "./../../components/common/toast/Toast";
 
 import "./Detail.css";
 
-
-const mapState = (state) =>{
-  return{
-    cartList:state.cartList
-  }
-}
-@connect(mapState,{addToCart})
+const mapState = (state) => {
+  return {
+    cartList: state.cartList,
+  };
+};
+@connect(mapState, { addToCart })
 @withRouter
 class Detail extends Component {
   constructor(props) {
     super(props);
     this.scroll = React.createRef();
+    this.toast = React.createRef();
     this.state = {
       iid: null,
       topImages: [],
@@ -52,6 +53,7 @@ class Detail extends Component {
           clickBack={this.clickBack}
         ></DetailNavBar>
         <Scroll ref={this.scroll} probType={2} pullUpLoad={false}>
+          <Toast ref={this.toast} msg="添加成功，在购物车等亲"></Toast>
           <DetailSwiper
             topImages={this.state.topImages}
             imgLoad={this.state.imgLoad}
@@ -145,8 +147,9 @@ class Detail extends Component {
     product.iid = this.state.iid;
     product.count = 1;
     // console.log(product)
-    this.props.addToCart(product)
+    this.props.addToCart(product);
     // console.log(this.props.cartList)
+    this.toast.current.toShow(2000);
   };
 }
 

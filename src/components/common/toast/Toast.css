@@ -1,0 +1,17 @@
+.main-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.toast-item {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 200px;
+  height: 60px;
+  background-color: #eee;
+  border-radius: 10%;
+}

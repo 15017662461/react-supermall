@@ -10,7 +10,7 @@ export default (state = initState,action) => {
       const goods = action.payload.goods;
       let product = null;
       if(newState.cartList.length !== 0){
-        product = newState.cartList.find(item => item.iid === goods.iid);
+        product = newState.cartList.find(item => {return item.iid === goods.iid });
         // console.log(product)
       }
       if(product){
